@@ -5,15 +5,17 @@
     "content_scripts": [
         {
             "matches":[
-                "<all_urls>"
+                "https://*.youtube.com/*"
             ],
             "js": ["content.js"]
         }
     ],
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["background.js"],
+        "persistent": false
     },
     "browser_action": {
-        "default_icon": "playlistmaker.png"
+        "default_icon": "playlistmaker.png",
+        "default_popup": "popup.html"
     }
 }

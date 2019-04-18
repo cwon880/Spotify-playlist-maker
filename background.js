@@ -1,4 +1,8 @@
 console.log("background");
 chrome.browserAction.onClicked.addListener(function(tab){
-    chrome.tabs.sendMessage(tab.id)
+
+    let msg = {
+        txt: "hello world"
+    }
+    chrome.tabs.sendMessage(tab.id, msg);
 });
