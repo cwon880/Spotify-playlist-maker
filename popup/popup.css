@@ -1,0 +1,11 @@
+body {
+    border: 1px solid transparent;
+    margin: 10px;
+    width: 200px;
+    background-color: rgb(102,153,153);
+}
+
+h1 {
+    font-size: 12px;
+}
+

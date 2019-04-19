@@ -16,6 +16,11 @@
     },
     "browser_action": {
         "default_icon": "playlistmaker.png",
-        "default_popup": "popup.html"
-    }
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": [
+        "identity",
+        "tabs",
+        "https://*.spotify.com/*"
+    ]
 }
