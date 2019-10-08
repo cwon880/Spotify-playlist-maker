@@ -1,8 +1,20 @@
 console.log("background");
-// chrome.runtime.onMessage.addListener(function(tab){
+chrome.runtime.onMessage.addListener(function(message, sender, response){
+    console.log(message.greetings)
+    console.log("this is background");
 
-//     let msg = {
-//         txt: "hello world"
-//     }
-//     //chrome.tabs.sendMessage(tab.id, msg);
-// });
+    //oauth flow here
+    if (message.action === 'launchOauth'){
+        chrome.identity.launchWebAuthFlow({
+
+
+
+
+
+
+
+        })
+        
+    }
+
+});
