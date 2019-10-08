@@ -1,10 +1,8 @@
-console.log("background");
 var client_id = '8dd0d7b10337406cb7e83196ab2eb701';
 var redirectUri = chrome.identity.getRedirectURL("spotify");
 var access_token = null;
 var time_out = null; 
 
-console.log(redirectUri);
 chrome.runtime.onMessage.addListener(function(message, sender, response){
     //oauth flow here
     if (message.action === 'launchOauth'){
@@ -20,6 +18,7 @@ function getToken(){
                "&response_type=token", 
         'interactive': true,  
       },
+      //callback to process url returned from spotify 
       function(redirect_url) {
         if (chrome.runtime.lastError) {
             callback(new Error(chrome.runtime.lastError));
@@ -37,10 +36,6 @@ function getToken(){
 
 // checks if token has expired and requests new token again 
 function checkRefreshToken(){
-
-
-
-
-
+    
 }
 
