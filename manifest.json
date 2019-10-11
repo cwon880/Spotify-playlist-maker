@@ -7,7 +7,7 @@
             "matches":[
                 "https://*.youtube.com/*"
             ],
-            "js": ["jquery-3.4.1.min.js","content.js"],
+            "js": ["content.js"],
             "run_at": "document_end"
         }
     ],
@@ -22,6 +22,7 @@
     "permissions": [
         "identity",
         "tabs",
-        "https://*.spotify.com/*"
+        "https://*.spotify.com/*",
+        "https://*.youtube.com/"
     ]
 }
