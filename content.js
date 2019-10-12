@@ -1,23 +1,26 @@
 console.log("hello");
+var url = window.location.toString();
+console.log(url);
 
-// var video_id = window.location.search.split('v=')[1];
-// var ampersandPosition = video_id.indexOf('&');
-// if(ampersandPosition != -1) {
-//   video_id = video_id.substring(0, ampersandPosition);
-// }
-var video_id = "Yqk1RwLwcXo"
-var yt_api_key = "AIzaSyAXdSuNOLvC8Dihin_Xtvrn9FGEDMo7jXg"
-yt_snippet_endpoint = "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + video_id + "&key=" + yt_api_key;
-
-var xhr = new XMLHttpRequest();
-xhr.overrideMimeType("application/json");
-xhr.open("GET", yt_snippet_endpoint,true);
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.onload = function(){
-  var data = JSON.parse(xhr.responseText);
-  console.log(data);
+var video_id = window.location.search.split('v=')[1];
+var ampersandPosition = video_id.indexOf('&');
+if(ampersandPosition != -1) {
+  video_id = video_id.substring(0, ampersandPosition);
 }
-xhr.send();
+console.log(video_id);
+// var video_id = "Yqk1RwLwcXo"
+// var yt_api_key = "AIzaSyAXdSuNOLvC8Dihin_Xtvrn9FGEDMo7jXg"
+// yt_snippet_endpoint = "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + video_id + "&key=" + yt_api_key;
+
+// var xhr = new XMLHttpRequest();
+// xhr.overrideMimeType("application/json");
+// xhr.open("GET", yt_snippet_endpoint,true);
+// xhr.setRequestHeader('Content-Type', 'application/json');
+// xhr.onload = function(){
+//   var data = JSON.parse(xhr.responseText);
+//   console.log(data);
+// }
+// xhr.send();
 // console.log(xhr.status);
 // console.log(xhr);
 // console.log(xhr.responseType);
