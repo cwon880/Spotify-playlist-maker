@@ -4,7 +4,7 @@ var access_token = null;
 var time_out = null; 
 //var video_id = null; 
 var yt_api_key = "AIzaSyAXdSuNOLvC8Dihin_Xtvrn9FGEDMo7jXg";
-
+var data = null;
 
 //build GET request with XMLHTTPRequest and retrive video info from youtube api
 function getYoutubeData(video_id){
@@ -14,11 +14,25 @@ function getYoutubeData(video_id){
   xhr.open("GET", yt_snippet_endpoint,true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onload = function(){
-    var data = JSON.parse(xhr.responseText);
+    data = JSON.parse(xhr.responseText);
     console.log(data);
   }
   xhr.send();
+
 }
+
+
+
+function simpleSpotifyQuery(){
+  var spotify_endpoint = "https://api.spotify.com/v1/search"+"q="+encodeURIComponent("slow dancing in the dark")+"&type=track"
+
+
+
+}
+// chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+//   var url = tabs[0].url;
+//   console.log("tab rn "+ url);
+// });
 
 // listen for changes to the website url and get youtube data 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
